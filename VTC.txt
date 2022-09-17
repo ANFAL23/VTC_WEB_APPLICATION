@@ -1,0 +1,101 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  mar. 21 dec. 2021 à 18:32
+-- Version du serveur :  5.5.45
+-- Version de PHP :  7.2.18
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données :  `VTC`
+--
+
+-- --------------------------------------------------------
+
+
+--
+-- Structure de la table `Annonce`
+--
+
+DROP TABLE IF EXISTS `Annonce`;
+CREATE TABLE IF NOT EXISTS `Annonce` (
+  `Id_annonce` int(11) NOT NULL AUTO_INCREMENT,
+  `titre_annonce` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `discription` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+   `URL_datailles` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`Id_annonce`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=ascii COLLATE=ascii_bin;
+
+--
+-- Déchargement des données de la table `Annonce`
+--
+
+INSERT INTO `Annonce` (`Id_annonce`, `titre_annonce`, `image`,`discription`,`URL_datailles`) VALUES
+(1, 'lettre','image_1','anonce chaba','annonce.html');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `menu`
+--
+
+DROP TABLE IF EXISTS `menu`;
+CREATE TABLE IF NOT EXISTS `menu` (
+  `Id_item_menu` int(11) NOT NULL AUTO_INCREMENT,
+  `Nom_item_menu` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`Id_item_menu`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=ascii COLLATE=ascii_bin;
+
+--
+-- Déchargement des données de la table `menu`
+--
+
+INSERT INTO `menu` (`Id_item_menu`, `Nom_item_menu`) VALUES
+(1, 'Acceuil'),
+(2, 'presentation'),
+(3, 'News'),
+(4, 'Inscription'),
+(5, 'Statistique'),
+(6, 'Contact');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `statuts`
+--
+
+DROP TABLE IF EXISTS `statuts`;
+CREATE TABLE IF NOT EXISTS `statuts` (
+  `Id_statut` int(11) NOT NULL AUTO_INCREMENT,
+  `Nom_statut` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`Id_statut`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=ascii COLLATE=ascii_bin;
+
+--
+-- Déchargement des données de la table `statuts`
+--
+
+INSERT INTO `statuts` (`Id_statut`, `Nom_statut`) VALUES
+(1,'en attente'),
+(2,'en cours de traitement'),
+(3,'validee'),
+(4,'refusee'),
+(5,'certifie');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
